@@ -1,0 +1,177 @@
+/* ==========================================================================
+   Theme Variables & Base Reset
+   ========================================================================== */
+:root {
+  --accent-purple: #8b7cf6;
+  --accent-coral: #ff7a59;
+  --accent-gradient: linear-gradient(135deg, var(--accent-purple), var(--accent-coral));
+  --bg-dark-glass: rgba(10, 10, 16, 0.75);
+  --surface-glass: rgba(255, 255, 255, 0.06);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Space Grotesk', sans-serif;
+  overflow-x: hidden;
+}
+
+/* ==========================================================================
+   Typography & Layout Utilities
+   ========================================================================== */
+.font-mono {
+  font-family: 'Space Mono', monospace;
+}
+
+.tracking-wide {
+  letter-spacing: 0.15em;
+}
+
+.accent-dot {
+  color: var(--accent-coral);
+}
+
+.hero-container,
+.content-container {
+  max-width: 640px;
+}
+
+.hero-title {
+  font-size: clamp(28px, 5vw, 44px);
+}
+
+.gradient-text {
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ==========================================================================
+   Background Glows & Avatar
+   ========================================================================== */
+.glow {
+  position: absolute;
+  width: 480px;
+  height: 480px;
+  border-radius: 50%;
+  filter: blur(110px);
+  opacity: 0.35;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.glow-1 {
+  background: var(--accent-purple);
+  top: -120px;
+  left: -100px;
+}
+
+.glow-2 {
+  background: var(--accent-coral);
+  top: 60px;
+  right: -140px;
+}
+
+.avatar-badge {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  background: var(--accent-gradient);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  font-size: 22px;
+}
+
+/* ==========================================================================
+   Navigation & Glassmorphism Controls
+   ========================================================================== */
+.blur-nav {
+  background: var(--bg-dark-glass);
+  backdrop-filter: blur(10px);
+}
+
+.nav-pills .nav-link {
+  color: var(--bs-secondary-color);
+  transition: color 0.2s, background 0.2s;
+}
+
+.nav-pills .nav-link.active {
+  background: var(--accent-gradient);
+  color: #0a0a10;
+  font-weight: 700;
+}
+
+.btn-glass {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(12px);
+  color: #fff;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  transition: all 0.2s ease;
+}
+
+.btn-glass:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(139, 124, 246, 0.7);
+  box-shadow: 0 0 20px rgba(139, 124, 246, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+.glass-dropdown {
+  background: rgba(10, 10, 16, 0.88);
+  backdrop-filter: blur(12px);
+  border-radius: 1rem;
+  padding: 0.5rem;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5), 0 0 18px rgba(139, 124, 246, 0.15);
+}
+
+.glass-dropdown .dropdown-item {
+  color: var(--bs-secondary-color);
+  transition: all 0.2s ease;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+}
+
+.glass-dropdown .dropdown-item:hover {
+  background: rgba(139, 124, 246, 0.15);
+  color: #fff;
+}
+
+/* ==========================================================================
+   Project Cards
+   ========================================================================== */
+.card {
+  border-radius: 2rem;
+  overflow: hidden;
+}
+
+.thumb-gradient {
+  height: 150px;
+  background: var(--accent-gradient);
+  opacity: 0.85;
+}
+
+.card-glow {
+  background: var(--surface-glass);
+  border: 1px solid rgba(139, 124, 246, 0.35);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 18px rgba(139, 124, 246, 0.15);
+  transition: box-shadow 0.25s ease, border-color 0.25s ease, transform 0.2s ease;
+}
+
+.card-glow:hover {
+  border-color: rgba(255, 122, 89, 0.7);
+  box-shadow: 0 0 28px rgba(255, 122, 89, 0.35);
+  transform: translateY(-4px);
+}
+
+.placeholder-card {
+  border-style: dashed;
+  min-height: 150px;
+}

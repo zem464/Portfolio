@@ -4,395 +4,186 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iris - Portfolio</title>
-    <link rel="icon" type="image/svg+xml" href="Assets/Icon.svg">
+    <link rel="icon" type="image/svg+xml" href="assets/Icon.svg">
+
+    <!-- Performance: Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Space+Mono&display=swap" rel="stylesheet">
+
+    <!-- Third-Party CSS: Bootstrap 5.3.3 & Devicon (pinned version) -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
-    <style>
-      html {scroll-behavior:smooth;}
-      body {font-family:'Space Grotesk', sans-serif; overflow-x: hidden;}
-      .font-mono {font-family:'Space Mono', monospace;}
-      .glow {position:absolute; width:480px; height:480px; border-radius:50%; filter:blur(110px); opacity:.35; z-index:0; pointer-events:none;}
-      .glow-1 {background:#8b7cf6; top:-120px; left:-100px;}
-      .glow-2 {background:#ff7a59; top:60px; right:-140px;}
-      .gradient-text {background:linear-gradient(135deg,#8b7cf6,#ff7a59); -webkit-background-clip:text; background-clip:text; color:transparent;}
-      .avatar-badge {width:84px; height:84px; border-radius:50%; background:linear-gradient(135deg,#8b7cf6,#ff7a59); display:flex; align-items:center; justify-content:center; font-family:'Space Mono',monospace; font-weight:700; font-size:22px;}
-      .thumb-gradient {height:150px; background:linear-gradient(135deg,#8b7cf6,#ff7a59); opacity:.85; border-radius: var(--bs-card-inner-border-radius) var(--bs-card-inner-border-radius) 0 0;}
-      .hover-lift {transition: transform .2s;}
-      .hover-lift:hover {transform: translateY(-4px);}
-      .blur-nav {background: rgba(10,10,16,.7); backdrop-filter: blur(10px);}
-      .nav-pills .nav-link.active{background:linear-gradient(135deg,#8b7cf6,#ff7a59); color:#0a0a10;}
-      .nav-pills .nav-link{color:var(--bs-secondary-color);}
-      .btn-glass {background: rgba(255, 255, 255, .08); border: 1px solid rgba(255, 255, 255, .25); backdrop-filter: blur(12px); color: #fff; -webkit-backdrop-filter: blur(12px); box-shadow: 0 4px 24px rgba(0, 0, 0, .25), inset 0 1px 0 rgba(255, 255, 255, .15);}
-      .btn-glass:hover {background: rgba(255, 255, 255, .14); border-color: rgba(139,124,246,.7); box-shadow: 0 0 20px rgba(139,124,246,.45), inset 0 1px 0 rgba(255,255,255,.2); color: #fff;}
-      .card {border-radius: 2rem; overflow: hidden;}
-      .card-glow {background: rgba(255, 255, 255, .06); border: 1px solid rgba(139,124,246,.35); backdrop-filter: blur(10px); box-shadow: 0 0 18px rgba(139,124,246,.15); transition: box-shadow .25s, border-color .25s, transform .2s;}
-      .card-glow:hover {border-color: rgba(255,122,89,.7); box-shadow: 0 0 28px rgba(255,122,89,.35); transform: translateY(-4px);}
-      .glass-dropdown {background: rgba(10, 10, 16, .85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-radius: 1rem; padding: 0.5rem; box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5), 0 0 18px rgba(139, 124, 246, 0.15);}
-      .glass-dropdown .dropdown-item {color: var(--bs-secondary-color); transition: all .2s; border-radius: 0.5rem; padding: 0.5rem 1rem;} 
-      .glass-dropdown .dropdown-item:hover {background: rgba(139, 124, 246, .15); color: #fff;}
-    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Navigation bar -->
+    <!-- Reusable SVG Icon Definitions -->
+    <svg class="d-none" aria-hidden="true">
+        <symbol id="icon-arrow" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0v-6z"/>
+        </symbol>
+    </svg>
+
+    <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top blur-nav border-bottom border-secondary-subtle">
-        <div class="container-fluid" style="margin-left: 20px;">
-            <a class="navbar-brand fw-bold" href="#">Iris<span style="color:#ff7a59">.</span></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">Iris<span class="accent-dot">.</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="nav">
                 <ul class="navbar-nav gap-3">
-                    <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#work">Projects</a></li>
                     <li class="nav-item"><a class="nav-link" href="#stack">Stack</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Header section -->
-    <header class="position-relative text-center pt-5 mt-5 pb-4 mb-10">
-        <div class="glow glow-1"></div>
-        <div class="glow glow-2"></div>
-        <div class="container position-relative" style="max-width:640px;">
+    <!-- Hero / Header Section -->
+    <header class="position-relative text-center pt-5 mt-5 pb-4 mb-5">
+        <div class="glow glow-1" aria-hidden="true"></div>
+        <div class="glow glow-2" aria-hidden="true"></div>
+
+        <div class="container position-relative hero-container">
             <div class="avatar-badge mx-auto mb-4">&lt;/&gt;</div>
-            <p class="font-mono text-uppercase text-secondary small mb-3" style="letter-spacing:.15em;">Computer engineering grad</p>
-            <h1 class="fw-bold mb-3" style="font-size:clamp(28px,5vw,44px);">I want to build things — <span class="gradient-text">and I'm just getting started.</span></h1>
-            <p class="text-secondary mb-10">Turning a Python background into full-stack skills, one project at a time. This site is project #1.</p>
+            <p class="font-mono text-uppercase text-secondary small mb-3 tracking-wide">Computer engineering grad</p>
+            <h1 class="fw-bold mb-3 hero-title">
+                I want to build things — <span class="gradient-text">and I'm just getting started.</span>
+            </h1>
+            <p class="text-secondary mb-4">
+                Turning a Python background into full-stack skills, one project at a time. This site is project #1.
+            </p>
+
+            <!-- Hero Action Buttons -->
             <div class="d-flex gap-3 justify-content-center flex-wrap">
-                <a href="#work" class="btn btn-glass rounded-pill px-4" style="background-color: #fff; color: #000;">View my work</a>
+                <a href="#work" class="btn btn-light rounded-pill px-4 fw-medium">View my work</a>
                 <div class="dropdown">
-                  <button class="btn btn-glass rounded-pill px-4 dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Download Documents
-                  </button>
-                  <ul class="dropdown-menu mt-2 glass-dropdown border-secondary-subtle">
-                      <li>
-                          <a class="dropdown-item d-flex align-items-center justify-content-between" href="assets/Zemerelin_Membrere_Resume.pdf" target="_blank" download="Zemerelin_Membrere_Resume.pdf">
-                              Résumé <i class="devicon-devicon-plain small text-secondary"></i>
-                          </a>
-                      </li>
-                      <li>
-                          <a class="dropdown-item d-flex align-items-center justify-content-between" href="assets/Zemerelin_Membrere_CV.pdf" target="_blank" download="Zemerelin_Membrere_CV.pdf">
-                              Curriculum Vitae <i class="devicon-devicon-plain small text-secondary"></i>
-                          </a>
-                      </li>
-                      <li><hr class="dropdown-divider border-secondary-subtle"></li>
-                      <li>
-                          <a class="dropdown-item d-flex align-items-center justify-content-between" href="assets/Zemerelin_Membrere_CoverLetter.pdf" target="_blank" download="Zemerelin_Membrere_CoverLetter.pdf">
-                              Cover Letter (Sample) <i class="devicon-devicon-plain small text-secondary"></i>
-                          </a>
-                      </li>
-                  </ul>
+                    <button class="btn btn-glass rounded-pill px-4 dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Download Documents
+                    </button>
+                    <ul class="dropdown-menu mt-2 glass-dropdown border-secondary-subtle">
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center justify-content-between" href="assets/Zemerelin_Membrere_Resume.pdf" target="_blank" rel="noopener noreferrer" download="Zemerelin_Membrere_Resume.pdf">
+                                Résumé <i class="devicon-devicon-plain small text-secondary ms-3"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center justify-content-between" href="assets/Zemerelin_Membrere_CV.pdf" target="_blank" rel="noopener noreferrer" download="Zemerelin_Membrere_CV.pdf">
+                                Curriculum Vitae <i class="devicon-devicon-plain small text-secondary ms-3"></i>
+                            </a>
+                        </li>
+                        <li><hr class="dropdown-divider border-secondary-subtle"></li>
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center justify-content-between" href="assets/Zemerelin_Membrere_CoverLetter.pdf" target="_blank" rel="noopener noreferrer" download="Zemerelin_Membrere_CoverLetter.pdf">
+                                Cover Letter (Sample) <i class="devicon-devicon-plain small text-secondary ms-3"></i>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- Work section -->
+    <!-- Projects Section -->
     <section class="container py-5" id="work">
         <div class="text-center mb-4">
-            <p class="font-mono text-uppercase text-secondary small mb-2" style="letter-spacing:.15em;">Selected work</p>
+            <p class="font-mono text-uppercase text-secondary small mb-2 tracking-wide">Selected work</p>
             <h2 class="fw-bold">Projects</h2>
         </div>
 
-        <ul class="nav nav-pills justify-content-center flex-wrap gap-2 mb-4">
-            <li class="nav-item"><button class="nav-link active" data-bs-toggle="pill" data-bs-target="#p-software" type="button">Software</button></li>
-            <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#p-hardware" type="button">Hardware & IoT</button></li>
-            <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#p-design" type="button">UI/UX Design</button></li>
-            <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#p-data" type="button">Data & Automation</button></li>
+        <!-- Category Tabs -->
+        <ul class="nav nav-pills justify-content-center flex-wrap gap-2 mb-4" role="tablist">
+            <li class="nav-item"><button class="nav-link active" data-bs-toggle="pill" data-bs-target="#p-software" type="button" role="tab">Software</button></li>
+            <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#p-hardware" type="button" role="tab">Hardware &amp; IoT</button></li>
+            <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#p-design" type="button" role="tab">UI/UX Design</button></li>
+            <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#p-data" type="button" role="tab">Data &amp; Automation</button></li>
         </ul>
 
+        <!-- Tab Panes (Populated via script.js) -->
         <div class="tab-content">
-          
-          <div class="tab-pane fade show active" id="p-software">
-            <div class="row row-cols-1 row-cols-md-3 g-9" style="--bs-gutter-x: 1rem; --bs-gutter-y: 1rem;">
-              <div class="col">
-                <div class="card card-glow h-100 hover-lift">
-                  <div class="thumb-gradient"></div>
-                  <a href="https://zem464.github.io/Portfolio/" target="_blank" class="card-body text-decoration-none d-flex justify-content-between align-items-center">
-                    <div>
-                      <p class="font-mono text-uppercase text-secondary small mb-1">HTML · CSS · Bootstrap</p>
-                      <h5 class="card-title mb-0 text-white">This portfolio</h5>
-                    </div>
-                    <svg class="arrow-icon text-secondary flex-shrink-0 ms-3" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
-                      <path fill-rule="evenodd" d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0v-6z"/>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-              <div class="col">
-                <div class="card card-glow h-100 hover-lift">
-                  <div class="thumb-gradient"></div>
-                  <a href="https://github.com/zem464/Basic-Learning-Codes.git" target="_blank" class="card-body text-decoration-none d-flex justify-content-between align-items-center">
-                    <div>
-                      <p class="font-mono text-uppercase text-secondary small mb-1">Python · Beginner-level Programming Exercises</p>
-                      <h5 class="card-title mb-0 text-white">Basic Learning Codes</h5>
-                    </div>
-                    <svg class="arrow-icon text-secondary flex-shrink-0 ms-3" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
-                      <path fill-rule="evenodd" d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0v-6z"/>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-              <div class="col">
-                <div class="card card-glow h-100 hover-lift">
-                  <div class="thumb-gradient"></div>
-                  <a href="https://github.com/zem464/Simple-Calculator.git" target="_blank" class="card-body text-decoration-none d-flex justify-content-between align-items-center">
-                    <div>
-                      <p class="font-mono text-uppercase text-secondary small mb-1">Python · Arithmetic Operations</p>
-                      <h5 class="card-title mb-0 text-white">Simple Calculator</h5>
-                    </div>
-                    <svg class="arrow-icon text-secondary flex-shrink-0 ms-3" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
-                      <path fill-rule="evenodd" d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0v-6z"/>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-              <div class="col">
-                <div class="card card-glow h-100 hover-lift">
-                  <div class="thumb-gradient"></div>
-                  <a href="https://github.com/zem464/Calculator-OOP.git" target="_blank" class="card-body text-decoration-none d-flex justify-content-between align-items-center">
-                    <div>
-                      <p class="font-mono text-uppercase text-secondary small mb-1">Python · Object-Oriented Programming</p>
-                      <h5 class="card-title mb-0 text-white">Calculator</h5>
-                    </div>
-                    <svg class="arrow-icon text-secondary flex-shrink-0 ms-3" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
-                      <path fill-rule="evenodd" d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0v-6z"/>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-              <div class="col">
-                <div class="card card-glow h-100 hover-lift">
-                  <div class="thumb-gradient"></div>
-                  <a href="https://github.com/zem464/Contact-Tracing.git" target="_blank" class="card-body text-decoration-none d-flex justify-content-between align-items-center">
-                    <div>
-                      <p class="font-mono text-uppercase text-secondary small mb-1">Python · GUI tkinter</p>
-                      <h5 class="card-title mb-0 text-white">Contact Tracing</h5>
-                    </div>
-                    <svg class="arrow-icon text-secondary flex-shrink-0 ms-3" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
-                      <path fill-rule="evenodd" d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0v-6z"/>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-              <div class="col">
-                <div class="card card-glow h-100 hover-lift">
-                  <div class="thumb-gradient"></div>
-                  <a href="https://github.com/zem464/DSA-Group-Portfolio_Revamped.git" target="_blank" class="card-body text-decoration-none d-flex justify-content-between align-items-center">
-                    <div>
-                      <p class="font-mono text-uppercase text-secondary small mb-1">HTML · Python · CSS · JavaScript</p>
-                      <h5 class="card-title mb-0 text-white">Cosmic Node</h5>
-                    </div>
-                    <svg class="arrow-icon text-secondary flex-shrink-0 ms-3" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
-                      <path fill-rule="evenodd" d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0v-6z"/>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-              <div class="col">
-                <div class="card card-glow h-100 hover-lift">
-                  <div class="thumb-gradient"></div>
-                  <a href="https://github.com/LEGENDFVRYz/thesis-management-system.git" target="_blank" class="card-body text-decoration-none d-flex justify-content-between align-items-center">
-                    <div>
-                      <p class="font-mono text-uppercase text-secondary small mb-1">Typescript · PHP · PUP Project </p>
-                      <h5 class="card-title mb-0 text-white">Thesis Management System</h5>
-                    </div>
-                    <svg class="arrow-icon text-secondary flex-shrink-0 ms-3" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
-                      <path fill-rule="evenodd" d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0v-6z"/>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-              <div class="col">
-                <div class="card bg-transparent border-secondary-subtle h-100 d-flex align-items-center justify-content-center text-center text-secondary p-4" style="border-style:dashed;">More software projects landing here soon</div>
-              </div>
+            <!-- Software Tab -->
+            <div class="tab-pane fade show active" id="p-software" role="tabpanel">
+                <div class="row row-cols-1 row-cols-md-3 g-3" id="grid-software"></div>
             </div>
-          </div>
 
-          <div class="tab-pane fade" id="p-hardware">
-            <div class="row row-cols-1 row-cols-md-3 g-9" style="--bs-gutter-x: 1rem; --bs-gutter-y: 1rem;">
-              <div class="col">
-                <div class="card card-glow h-100 hover-lift">
-                  <div class="thumb-gradient"></div>
-                  <a href="https://github.com/zem464/PPG-Collector.git" target="_blank" class="card-body text-decoration-none d-flex justify-content-between align-items-center">
-                    <div>
-                      <p class="font-mono text-uppercase text-secondary small mb-1">C++ · IoT · ESP8266</p>
-                      <h5 class="card-title mb-0 text-white">PPG Collector</h5>
-                    </div>
-                    <svg class="arrow-icon text-secondary flex-shrink-0 ms-3" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
-                      <path fill-rule="evenodd" d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0v-6z"/>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-              <div class="col">
-                <div class="card card-glow h-100 hover-lift">
-                  <div class="thumb-gradient"></div>
-                  <a href="https://github.com/zem464/Thesis-AnemiAlert_Hardware.git" target="_blank" class="card-body text-decoration-none d-flex justify-content-between align-items-center">
-                    <div>
-                      <p class="font-mono text-uppercase text-secondary small mb-1">C++ · ESP32-S3 · MAX30105 </p>
-                      <h5 class="card-title mb-0 text-white">AnemiAlert Hardware</h5>
-                    </div>
-                    <svg class="arrow-icon text-secondary flex-shrink-0 ms-3" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
-                      <path fill-rule="evenodd" d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0v-6z"/>
-                    </svg>
-                  </a>
-                </div>
-              </div>
+            <!-- Hardware & IoT Tab -->
+            <div class="tab-pane fade" id="p-hardware" role="tabpanel">
+                <div class="row row-cols-1 row-cols-md-3 g-3" id="grid-hardware"></div>
             </div>
-          </div>
-          
-          <div class="tab-pane fade" id="p-design">
-            <div class="row row-cols-1 row-cols-md-3 g-9" style="--bs-gutter-x: 1rem; --bs-gutter-y: 1rem;">
-              <div class="col">
-                <div class="card card-glow h-100 hover-lift">
-                  <div class="thumb-gradient"></div>
-                  <a href="https://www.figma.com/folder_invite/redeem/OZc21n6ipZkUEOS9k8qPqN" target="_blank" class="card-body text-decoration-none d-flex justify-content-between align-items-center">
-                    <div>
-                      <h5 class="card-title mb-0 text-white">Thesis Management System</h5>
-                    </div>
-                    <svg class="arrow-icon text-secondary flex-shrink-0 ms-3" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
-                      <path fill-rule="evenodd" d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0v-6z"/>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-              <div class="col">
-                <div class="card card-glow h-100 hover-lift">
-                  <div class="thumb-gradient"></div>
-                  <a href="https://www.figma.com/design/NwL7n2sVmtLM4U0fCbOhRm/AnemiAlert_UI--Copy-?m=auto&t=JCusqzoIOX0OJjTh-1" target="_blank" class="card-body text-decoration-none d-flex justify-content-between align-items-center">
-                    <div>
-                      <h5 class="card-title mb-0 text-white">AnemiAlert UI</h5>
-                    </div>
-                    <svg class="arrow-icon text-secondary flex-shrink-0 ms-3" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
-                      <path fill-rule="evenodd" d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0v-6z"/>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-              <div class="col">
-                <div class="card card-glow h-100 hover-lift">
-                  <div class="thumb-gradient"></div>
-                  <a href="https://www.figma.com/design/RJ7cC3XOLvTAZ9TLcssuV0/DSA-Group-Portfolio--Copy-?m=auto&t=JCusqzoIOX0OJjTh-1" target="_blank" class="card-body text-decoration-none d-flex justify-content-between align-items-center">
-                    <div>
-                      <h5 class="card-title mb-0 text-white">Revamped Design of DSA Group Portfolio</h5>
-                    </div>
-                    <svg class="arrow-icon text-secondary flex-shrink-0 ms-3" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
-                      <path fill-rule="evenodd" d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0v-6z"/>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-              <div class="col">
-                <div class="card card-glow h-100 hover-lift">
-                  <div class="thumb-gradient"></div>
-                  <a href="https://www.figma.com/design/ecJ4BahJ5RLxuu54Av5HV5/S-Plit--Copy-?m=auto&t=JCusqzoIOX0OJjTh-1" target="_blank" class="card-body text-decoration-none d-flex justify-content-between align-items-center">
-                    <div>
-                      <h5 class="card-title mb-0 text-white">S-Plit UI</h5>
-                    </div>
-                    <svg class="arrow-icon text-secondary flex-shrink-0 ms-3" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
-                      <path fill-rule="evenodd" d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0v-6z"/>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="tab-pane fade" id="p-data">
-            <div class="mt-4">
-              
-              <!-- Spreadsheets -->
-              <div class="mb-5"> 
-                <h5 class="text-center mb-4">Spreadsheet Automation</h5>
-                <div class="row row-cols-1 row-cols-md-3 g-9" style="--bs-gutter-x: 1rem; --bs-gutter-y: 1rem;">
-                  <div class="col">
-                    <div class="card card-glow h-100 hover-lift">
-                      <div class="thumb-gradient"></div>
-                      <a href="https://docs.google.com/spreadsheets/d/1j6aFZnzoqhpR-z90CAzYEo4SVI-T4KPd11Qxqpec4DY/edit?usp=sharing" target="_blank" class="card-body text-decoration-none d-flex justify-content-between align-items-center">
-                        <div>
-                          <h5 class="card-title mb-0 text-white">Shopee Tracker</h5>
-                        </div>
-                        <svg class="arrow-icon text-secondary flex-shrink-0 ms-3" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
-                          <path fill-rule="evenodd" d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0v-6z"/>
-                        </svg>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div class="card card-glow h-100 hover-lift">
-                      <div class="thumb-gradient"></div>
-                      <a href="https://docs.google.com/spreadsheets/d/1p9_FT6QRkd_pfowb7SXiNEn7tDSu7H6RZ4sx6uyNFrA/edit?usp=sharing" target="_blank" class="card-body text-decoration-none d-flex justify-content-between align-items-center">
-                        <div>
-                          <h5 class="card-title mb-0 text-white">Job Application Tracker</h5>
-                        </div>
-                        <svg class="arrow-icon text-secondary flex-shrink-0 ms-3" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
-                          <path fill-rule="evenodd" d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0v-6z"/>
-                        </svg>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
 
-              <!--Data Analytics -->
-              <div>
-                <h5 class="text-center mb-4">Data Analytics</h5>
-                <div class="card bg-transparent border-secondary-subtle d-flex align-items-center justify-content-center text-center text-secondary p-5" style="border-style:dashed; min-height:150px;">
-                  Data analytics projects coming soon
-                </div>
-              </div>
+            <!-- UI/UX Design Tab -->
+            <div class="tab-pane fade" id="p-design" role="tabpanel">
+                <div class="row row-cols-1 row-cols-md-3 g-3" id="grid-design"></div>
             </div>
-          </div>
-          
+
+            <!-- Data & Automation Tab -->
+            <div class="tab-pane fade" id="p-data" role="tabpanel">
+                <div class="mt-4">
+                    <div class="mb-5">
+                        <h5 class="text-center mb-4">Spreadsheet Automation</h5>
+                        <div class="row row-cols-1 row-cols-md-3 g-3" id="grid-data"></div>
+                    </div>
+
+                    <div>
+                        <h5 class="text-center mb-4">Data Analytics</h5>
+                        <div class="card bg-transparent border-secondary-subtle d-flex align-items-center justify-content-center text-center text-secondary p-5 placeholder-card">
+                            Data analytics projects coming soon
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Stack section -->
+    <!-- Tech Stack Section -->
     <section class="text-center py-5" id="stack">
-      <h2 class="fw-bold mb-2">Stack</h2>
-      <p class="font-mono text-uppercase text-secondary small mb-3" style="letter-spacing:.15em;">Currently working with</p>
-      <div class="d-flex gap-2 justify-content-center flex-wrap mx-3">
-          <span class="badge rounded-pill text-bg-secondary font-mono px-3 py-2 d-flex align-items-center gap-2"><i class="devicon-python-plain"></i>Python</span>
-          <span class="badge rounded-pill text-bg-secondary font-mono px-3 py-2 d-flex align-items-center gap-2"><i class="devicon-html5-plain"></i>HTML5</span>
-          <span class="badge rounded-pill text-bg-secondary font-mono px-3 py-2 d-flex align-items-center gap-2"><i class="devicon-css3-plain"></i>CSS3</span>
-          <span class="badge rounded-pill text-bg-secondary font-mono px-3 py-2 d-flex align-items-center gap-2"><i class="devicon-javascript-plain"></i>JavaScript</span>
-          <span class="badge rounded-pill text-bg-secondary font-mono px-3 py-2 d-flex align-items-center gap-2"><i class="devicon-bootstrap-plain"></i>Bootstrap</span>
-          <span class="badge rounded-pill text-bg-secondary font-mono px-3 py-2 d-flex align-items-center gap-2"><i class="devicon-flask-plain"></i>Flask</span>
-          <span class="badge rounded-pill text-bg-secondary font-mono px-3 py-2 d-flex align-items-center gap-2"><i class="devicon-google-plain"></i>Google Workspace</span>
-          <span class="badge rounded-pill text-bg-secondary font-mono px-3 py-2 d-flex align-items-center gap-2"><i class="devicon-microsoft-plain"></i>Microsoft Office</span>
-      </div>
-      <p class="text-secondary small mt-3 mb-0 mx-3">Certified: CCNA Introduction to Networks · DataCamp Python &amp; Dash/Plotly</p>
+        <h2 class="fw-bold mb-2">Stack</h2>
+        <p class="font-mono text-uppercase text-secondary small mb-3 tracking-wide">Currently working with</p>
+        <!-- Badges Populated via script.js -->
+        <div class="d-flex gap-2 justify-content-center flex-wrap mx-3" id="stack-container"></div>
+        <p class="text-secondary small mt-3 mb-0 mx-3">Certified: CCNA Introduction to Networks · DataCamp Python &amp; Dash/Plotly</p>
     </section>
 
-    <!-- About Me section -->
+    <!-- About Me Section -->
     <section class="text-center py-5" id="about">
-      <h2 class="fw-bold">About Me</h2>
-      <div class="container" style="max-width:640px;">
-          <p class="text-secondary">I'm a Computer Engineering graduate from PUP Sta. Mesa, who majored in Big Data Analytics, with a passion for building practical, well-crafted software.</p>
-          <p class="text-secondary">I thrive in collaborative environments and enjoy tackling problems with creative, detail-oriented approaches — skills I've sharpened through internship work in UI/UX design and IT training support.</p>
-          <p class="text-secondary mb-0">I'm currently working through a full-stack development roadmap, building real projects (starting with this site) as I go, and looking for opportunities to put these skills to work.</p>
-      </div>
+        <h2 class="fw-bold mb-3">About Me</h2>
+        <div class="container content-container">
+            <p class="text-secondary">
+                I'm a Computer Engineering graduate from PUP Sta. Mesa, who majored in Big Data Analytics, with a passion for building practical, well-crafted software.
+            </p>
+            <p class="text-secondary">
+                I thrive in collaborative environments and enjoy tackling problems with creative, detail-oriented approaches — skills I've sharpened through internship work in UI/UX design and IT training support.
+            </p>
+            <p class="text-secondary mb-0">
+                I'm currently working through a full-stack development roadmap, building real projects (starting with this site) as I go, and looking for opportunities to put these skills to work.
+            </p>
+        </div>
     </section>
 
-    <!-- Contact section -->
+    <!-- Contact Section -->
     <section class="text-center py-5" id="contact">
-      <h2 class="fw-bold">Contact</h2>
-      <p class="text-secondary mb-2"><a href="mailto:zemerelinmembrere@gmail.com" class="text-secondary">zemerelinmembrere@gmail.com</a></p>
-      <p class="text-secondary small mb-0">
-          <a href="https://github.com/zem464" class="text-secondary">GitHub</a> ·
-          <a href="https://linkedin.com/in/zemerelin-iris-membrere-a3b9bb214/" class="text-secondary">LinkedIn</a>
-      </p>
+        <h2 class="fw-bold mb-3">Contact</h2>
+        <p class="text-secondary mb-2">
+            <a href="mailto:zemerelinmembrere@gmail.com" class="text-secondary text-decoration-none">zemerelinmembrere@gmail.com</a>
+        </p>
+        <p class="text-secondary small mb-0">
+            <a href="https://github.com/zem464" target="_blank" rel="noopener noreferrer" class="text-secondary">GitHub</a> ·
+            <a href="https://linkedin.com/in/zemerelin-iris-membrere-a3b9bb214/" target="_blank" rel="noopener noreferrer" class="text-secondary">LinkedIn</a>
+        </p>
     </section>
 
-    <!-- Footer section -->
+    <!-- Footer -->
     <footer class="text-center text-secondary small py-4 border-top border-secondary-subtle">
-      © 2026 Zemerelin Iris Membrere. Built with HTML, CSS &amp; Bootstrap.
+        © 2026 Zemerelin Iris Membrere. Built with HTML, CSS &amp; Bootstrap.
     </footer>
 
+    <!-- Bootstrap Bundle JS & Portfolio Renderer -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
+    <script src="script.js"></script>
 </body>
 </html>
