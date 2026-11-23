@@ -114,17 +114,24 @@ const PORTFOLIO_DATA = {
     ],
     sheets: [
       {
+        title: "Finance Manager",
+        tags: "Google Sheets · Digital Management",
+        description: "Structured spreadsheet for managing finances and wallets.",
+        image: "Assets/projects/sheets-finance-manager.png",
+        url: "https://docs.google.com/spreadsheets/d/1A1aNs2ImC6HfvCiaI9kn-aVo3XvWcz-KXHRxTqopxno/edit?usp=sharing"
+      },
+      {
         title: "Shopee Tracker",
         tags: "Google Sheets · Automation",
         description: "Spreadsheet tracker organized to monitor orders, statuses, and spending activity.",
-        image: "Assets/projects/shopee-tracker.png",
+        image: "Assets/projects/sheets-shopee-tracker.png",
         url: "https://docs.google.com/spreadsheets/d/1j6aFZnzoqhpR-z90CAzYEo4SVI-T4KPd11Qxqpec4DY/edit?usp=sharing"
       },
       {
         title: "Job Application Tracker",
         tags: "Google Sheets · Automation",
         description: "Structured spreadsheet log for tracking applications, roles, and follow-up stages.",
-        image: "Assets/projects/job-tracker.png",
+        image: "Assets/projects/sheets-job-tracker.png",
         url: "https://docs.google.com/spreadsheets/d/1p9_FT6QRkd_pfowb7SXiNEn7tDSu7H6RZ4sx6uyNFrA/edit?usp=sharing"
       }
     ],
