@@ -105,7 +105,7 @@ const PORTFOLIO_DATA = {
         url: "https://www.figma.com/design/ecJ4BahJ5RLxuu54Av5HV5/S-Plit?m=auto&t=90az6BrxnnTMXIin-1"
       }
     ],
-    data: [
+    sheets: [
       {
         title: "Shopee Tracker",
         tags: "Google Sheets · Automation",
@@ -119,6 +119,15 @@ const PORTFOLIO_DATA = {
         description: "Structured spreadsheet log for tracking applications, roles, and follow-up stages.",
         image: "Assets/projects/job-tracker.png",
         url: "https://docs.google.com/spreadsheets/d/1p9_FT6QRkd_pfowb7SXiNEn7tDSu7H6RZ4sx6uyNFrA/edit?usp=sharing"
+      }
+    ],
+    data: [
+      {
+        title: "DepEd Enrollment Dashboard",
+        tags: "Dashboard · Plotly",
+        description: "An interactive, user-friendly dashboard designed to visualize and analyze comprehensive DepEd enrollment data, providing educators, policymakers, and stakeholders with valuable insights to support effective, data-driven decision-making in education planning and policy formulation. ",
+        image: "Assets/projects/data-deped.png",
+        url: "https://github.com/liabilitea/DepEd-Enrollment-Dashboard.git"
       }
     ]
   },
@@ -225,6 +234,7 @@ document.addEventListener("DOMContentLoaded", () => {
   renderProjectGrid("grid-software", PORTFOLIO_DATA.projects.software);
   renderProjectGrid("grid-hardware", PORTFOLIO_DATA.projects.hardware);
   renderProjectGrid("grid-design", PORTFOLIO_DATA.projects.design);
+  renderProjectGrid("grid-sheets", PORTFOLIO_DATA.projects.sheets);
   renderProjectGrid("grid-data", PORTFOLIO_DATA.projects.data);
   renderStack("stack-container", PORTFOLIO_DATA.stack);
-});s
+});
