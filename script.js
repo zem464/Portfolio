@@ -10,49 +10,49 @@ const PORTFOLIO_DATA = {
         title: "This portfolio",
         tags: "HTML · CSS · Bootstrap",
         description: "Personal portfolio showcasing software, hardware, UI/UX, and data projects.",
-        image: "assets/projects/portfolio.png",
+        image: "Assets/projects/portfolio.png",
         url: "https://zem464.github.io/Portfolio/"
       },
       {
         title: "Basic Learning Codes",
         tags: "Python · Beginner-level Programming Exercises",
         description: "Foundational Python exercises covering variables, control flow, loops, and functions.",
-        image: "assets/projects/basic-learning-codes.png",
+        image: "Assets/projects/basic-learning-codes.png",
         url: "https://github.com/zem464/Basic-Learning-Codes.git"
       },
       {
         title: "Simple Calculator",
         tags: "Python · Arithmetic Operations",
         description: "Command-line calculator supporting core arithmetic operations and input handling.",
-        image: "assets/projects/simple-calculator.png",
+        image: "Assets/projects/simple-calculator.png",
         url: "https://github.com/zem464/Simple-Calculator.git"
       },
       {
         title: "Calculator",
         tags: "Python · Object-Oriented Programming",
         description: "Refactored Python calculator structured around object-oriented classes and methods.",
-        image: "assets/projects/calculator-oop.png",
+        image: "Assets/projects/calculator-oop.png",
         url: "https://github.com/zem464/Calculator-OOP.git"
       },
       {
         title: "Contact Tracing",
         tags: "Python · GUI tkinter",
         description: "Desktop GUI application built with Tkinter for recording and managing contact tracing logs.",
-        image: "assets/projects/contact-tracing.png",
+        image: "Assets/projects/contact-tracing.png",
         url: "https://github.com/zem464/Contact-Tracing.git"
       },
       {
         title: "Cosmic Node",
         tags: "HTML · Python · CSS · JavaScript",
         description: "Group portfolio web project combining front-end styling, interactivity, and Python tooling.",
-        image: "assets/projects/cosmic-node.png",
+        image: "Assets/projects/cosmic-node.png",
         url: "https://github.com/zem464/DSA-Group-Portfolio_Revamped.git"
       },
       {
         title: "Thesis Management System",
         tags: "TypeScript · PHP · PUP Project",
         description: "Web-based system built for organizing and tracking academic thesis workflows.",
-        image: "assets/projects/thesis-management-system.png",
+        image: "Assets/projects/thesis-management-system.png",
         url: "https://github.com/LEGENDFVRYz/thesis-management-system.git"
       },
       {
@@ -64,14 +64,14 @@ const PORTFOLIO_DATA = {
         title: "PPG Collector",
         tags: "C++ · IoT · ESP8266",
         description: "ESP8266 firmware in C++ for capturing photoplethysmography (PPG) signals over IoT.",
-        image: "assets/projects/ppg-collector.png",
+        image: "Assets/projects/ppg-collector.png",
         url: "https://github.com/zem464/PPG-Collector.git"
       },
       {
         title: "AnemiAlert Hardware",
         tags: "C++ · ESP32-S3 · MAX30105",
         description: "Non-invasive prototype hardware pairing an ESP32-S3 with a MAX30105 optical sensor.",
-        image: "assets/projects/anemialert-hardware.png",
+        image: "Assets/projects/anemialert-hardware.png",
         url: "https://github.com/zem464/Thesis-AnemiAlert_Hardware.git"
       }
     ],
@@ -80,28 +80,28 @@ const PORTFOLIO_DATA = {
         title: "Thesis Management System",
         tags: "Figma · UI/UX Design",
         description: "Interface wireframes and design flows for managing thesis submissions and reviews.",
-        image: "assets/projects/ui-thesis-management.png",
+        image: "Assets/projects/ui-thesis-management.png",
         url: "https://www.figma.com/design/PqYufY825to2xjqxMSF16k/Thesis-Management-System?m=auto&t=90az6BrxnnTMXIin-1"
       },
       {
         title: "AnemiAlert UI",
         tags: "Figma · UI/UX Design",
         description: "Screen layouts and user flows designed around AnemiAlert health-screening workflows.",
-        image: "assets/projects/ui-anemialert.png",
+        image: "Assets/projects/ui-anemialert.png",
         url: "https://www.figma.com/design/NwL7n2sVmtLM4U0fCbOhRm/AnemiAlert?m=auto&t=90az6BrxnnTMXIin-1"
       },
       {
         title: "Revamped Design of DSA Group Portfolio",
         tags: "Figma · UI/UX Redesign",
         description: "Visual refresh and layout structure for the DSA group portfolio website.",
-        image: "assets/projects/ui-dsa-portfolio.png",
+        image: "Assets/projects/ui-dsa-portfolio.png",
         url: "https://www.figma.com/design/RJ7cC3XOLvTAZ9TLcssuV0/Cosmic-Node?m=auto&t=90az6BrxnnTMXIin-1"
       },
       {
         title: "S-Plit UI",
         tags: "Figma · Mobile UI Design",
         description: "UI design concepts for splitting shared expenses cleanly and intuitively.",
-        image: "assets/projects/ui-split.png",
+        image: "Assets/projects/ui-split.png",
         url: "https://www.figma.com/design/ecJ4BahJ5RLxuu54Av5HV5/S-Plit?m=auto&t=90az6BrxnnTMXIin-1"
       }
     ],
@@ -110,14 +110,14 @@ const PORTFOLIO_DATA = {
         title: "Shopee Tracker",
         tags: "Google Sheets · Automation",
         description: "Spreadsheet tracker organized to monitor orders, statuses, and spending activity.",
-        image: "assets/projects/shopee-tracker.png",
+        image: "Assets/projects/shopee-tracker.png",
         url: "https://docs.google.com/spreadsheets/d/1j6aFZnzoqhpR-z90CAzYEo4SVI-T4KPd11Qxqpec4DY/edit?usp=sharing"
       },
       {
         title: "Job Application Tracker",
         tags: "Google Sheets · Automation",
         description: "Structured spreadsheet log for tracking applications, roles, and follow-up stages.",
-        image: "assets/projects/job-tracker.png",
+        image: "Assets/projects/job-tracker.png",
         url: "https://docs.google.com/spreadsheets/d/1p9_FT6QRkd_pfowb7SXiNEn7tDSu7H6RZ4sx6uyNFrA/edit?usp=sharing"
       }
     ]
