@@ -56,6 +56,13 @@ const PORTFOLIO_DATA = {
         url: "https://github.com/LEGENDFVRYz/thesis-management-system.git"
       },
       {
+        title: "StockFlow",
+        tags: "Base44 · JavaScript · CSS",
+        description: "A specialized inventory and analytics dashboard designed for local small businesses to track daily metrics, monthly sales, and real-time stock.",
+        image: "Assets/projects/stockflow.png",
+        url: "https://stock-flow-0a6878b5.base44.app/"
+      },
+      {
         placeholder: "More software projects landing here soon"
       }
     ],
