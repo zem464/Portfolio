@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iris - Portfolio</title>
-    <link rel="icon" type="image/svg+xml" href="assets/Icon.svg">
+    <link rel="icon" type="image/svg+xml" href="Assets/Icon.svg">
 
     <!-- Performance: Preconnect to Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -44,53 +44,99 @@
         </div>
     </nav>
 
-    <!-- Hero / Header Section -->
-    <header class="position-relative text-center pt-5 mt-5 pb-4 mb-5">
+    <!-- Hero / Header Section (two-column: abstract icon left, content right) -->
+    <header class="position-relative text-center text-lg-start pt-5 mt-5 pb-4 mb-5">
         <div class="glow glow-1" aria-hidden="true"></div>
         <div class="glow glow-2" aria-hidden="true"></div>
 
-        <div class="container position-relative hero-container">
-            <div class="avatar-badge mx-auto mb-4">&lt;/&gt;</div>
-            <p class="font-mono text-uppercase text-secondary small mb-3 tracking-wide">Computer engineering grad</p>
-            <h1 class="fw-bold mb-3 hero-title">
-                I want to build things — <span class="gradient-text">and I'm just getting started.</span>
-            </h1>
-            <p class="text-secondary mb-4">
-                Turning a Python background into full-stack skills, one project at a time. This site is project #1.
-            </p>
+        <div class="container position-relative">
+            <div class="row align-items-center g-5">
 
-            <!-- Hero Action Buttons -->
-            <div class="d-flex gap-3 justify-content-center flex-wrap">
-                <a href="#work" class="btn btn-light rounded-pill px-4 fw-medium">View my work</a>
-                <div class="dropdown">
-                    <button class="btn btn-glass rounded-pill px-4 dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Download Documents
-                    </button>
-                    <ul class="dropdown-menu mt-2 glass-dropdown border-secondary-subtle">
-                        <li>
-                            <a class="dropdown-item d-flex align-items-center justify-content-between" href="assets/Zemerelin_Membrere_Resume.pdf" target="_blank" rel="noopener noreferrer" download="Zemerelin_Membrere_Resume.pdf">
-                                Résumé <i class="devicon-devicon-plain small text-secondary ms-3"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item d-flex align-items-center justify-content-between" href="assets/Zemerelin_Membrere_CV.pdf" target="_blank" rel="noopener noreferrer" download="Zemerelin_Membrere_CV.pdf">
-                                Curriculum Vitae <i class="devicon-devicon-plain small text-secondary ms-3"></i>
-                            </a>
-                        </li>
-                        <li><hr class="dropdown-divider border-secondary-subtle"></li>
-                        <li>
-                            <a class="dropdown-item d-flex align-items-center justify-content-between" href="assets/Zemerelin_Membrere_CoverLetter.pdf" target="_blank" rel="noopener noreferrer" download="Zemerelin_Membrere_CoverLetter.pdf">
-                                Cover Letter (Sample) <i class="devicon-devicon-plain small text-secondary ms-3"></i>
-                            </a>
-                        </li>
-                    </ul>
+                <!-- Left: abstract icon -->
+                <div class="col-lg-5">
+                    <svg class="hero-art" viewBox="0 0 400 400" role="img" aria-label="Abstract code icon" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="heroGradA" x1="0" y1="0" x2="1" y2="1">
+                                <stop offset="0" style="stop-color: var(--accent-purple)"/>
+                                <stop offset="1" style="stop-color: var(--accent-coral)"/>
+                            </linearGradient>
+                            <linearGradient id="heroGradB" x1="1" y1="0" x2="0" y2="1">
+                                <stop offset="0" style="stop-color: var(--accent-purple)"/>
+                                <stop offset="1" style="stop-color: var(--accent-coral)"/>
+                            </linearGradient>
+                        </defs>
+
+                        <!-- Orbit ring -->
+                        <circle cx="200" cy="200" r="175" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1.5" stroke-dasharray="3 9"/>
+
+                        <!-- Layered rotated squares -->
+                        <rect x="85" y="85" width="230" height="230" rx="52" fill="none" stroke="url(#heroGradB)" stroke-width="2" opacity="0.55" transform="rotate(-14 200 200)"/>
+                        <rect x="85" y="85" width="230" height="230" rx="52" fill="url(#heroGradA)" opacity="0.14" transform="rotate(14 200 200)"/>
+                        <rect x="85" y="85" width="230" height="230" rx="52" fill="none" stroke="url(#heroGradA)" stroke-width="2" opacity="0.8" transform="rotate(14 200 200)"/>
+
+                        <!-- Core -->
+                        <rect x="130" y="130" width="140" height="140" rx="38" fill="url(#heroGradA)"/>
+
+                        <!-- </> glyph -->
+                        <g fill="none" stroke="#0a0a10" stroke-width="10" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M178 172 L152 200 L178 228"/>
+                            <path d="M222 172 L248 200 L222 228"/>
+                            <path d="M209 166 L191 234"/>
+                        </g>
+
+                        <!-- Orbiting dots -->
+                        <circle cx="200" cy="25" r="8" fill="var(--accent-coral)"/>
+                        <circle cx="357" cy="262" r="6" fill="var(--accent-purple)"/>
+                        <circle cx="58" cy="292" r="7" fill="url(#heroGradA)"/>
+                        <circle cx="338" cy="104" r="4" fill="rgba(255,255,255,0.55)"/>
+                    </svg>
                 </div>
+
+                <!-- Right: hero content -->
+                <div class="col-lg-7">
+                    <p class="font-mono text-uppercase text-secondary small mb-3 tracking-wide">Computer engineering grad</p>
+                    <h1 class="fw-bold mb-3 hero-title">
+                        I want to build things — <span class="gradient-text">and I'm just getting started.</span>
+                    </h1>
+                    <p class="text-secondary mb-4">
+                        Turning a Python background into full-stack skills, one project at a time. This site is project #1.
+                    </p>
+
+                    <!-- Hero Action Buttons -->
+                    <div class="d-flex gap-3 justify-content-center justify-content-lg-start flex-wrap">
+                        <a href="#work" class="btn btn-light rounded-pill px-4 fw-medium">View my work</a>
+                        <div class="dropdown">
+                            <button class="btn btn-glass rounded-pill px-4 dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Download Documents
+                            </button>
+                            <ul class="dropdown-menu mt-2 glass-dropdown border-secondary-subtle">
+                                <li>
+                                    <a class="dropdown-item d-flex align-items-center justify-content-between" href="Assets/Zemerelin_Membrere_Resume.pdf" target="_blank" rel="noopener noreferrer" download="Zemerelin_Membrere_Resume.pdf">
+                                        Résumé <i class="devicon-devicon-plain small text-secondary ms-3"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item d-flex align-items-center justify-content-between" href="Assets/Zemerelin_Membrere_CV.pdf" target="_blank" rel="noopener noreferrer" download="Zemerelin_Membrere_CV.pdf">
+                                        Curriculum Vitae <i class="devicon-devicon-plain small text-secondary ms-3"></i>
+                                    </a>
+                                </li>
+                                <li><hr class="dropdown-divider border-secondary-subtle"></li>
+                                <li>
+                                    <a class="dropdown-item d-flex align-items-center justify-content-between" href="Assets/Zemerelin_Membrere_CoverLetter.pdf" target="_blank" rel="noopener noreferrer" download="Zemerelin_Membrere_CoverLetter.pdf">
+                                        Cover Letter (Sample) <i class="devicon-devicon-plain small text-secondary ms-3"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </header>
 
     <!-- Projects Section -->
-    <section class="container py-5" id="work">
+    <section class="container py-3" id="work">
         <div class="text-center mb-4">
             <p class="font-mono text-uppercase text-secondary small mb-2 tracking-wide">Selected work</p>
             <h2 class="fw-bold">Projects</h2>
